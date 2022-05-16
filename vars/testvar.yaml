@@ -1,0 +1,21 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks: 
+  - name: install package 
+    yum:
+      name: nginx
+      state: present
+    register: out
+  - name: display variable  
+    debug:
+      msg: 'Task executed with return code of {{out.rc}}'
+  - name: start service
+    service:
+      name: nginx
+      state: started
+    when: out.rc == 0
+ 
+
+
+   

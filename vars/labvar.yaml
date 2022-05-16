@@ -1,0 +1,26 @@
+---
+- hosts: '{{env}}'
+  gather_facts: no
+  become: yes
+  vars_files:
+    vars_{{env}}.yaml
+  tasks: 
+  - name: install package 
+    yum:
+      name: '{{pkg_name}}'
+      state: present
+  - name: display variable  
+    debug:
+      msg: 'Installed package {{pkg_name}}'
+ 
+  - name: create user
+    user:
+      name: '{{user_name}}'
+      state: present
+  - name: display variable  
+    debug:
+      msg: 'created test user with name {{user_name}}'
+ 
+
+
+   

@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  user: ec2-user
+  connection: ssh
+  tasks:
+    - name: Adding a number of users
+      user: name={{ item }} state=present
+      with_items:
+        - userX
+        - userY
+        - userZ
