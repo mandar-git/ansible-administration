@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: "message from play4 task"
+
+- name: Include a play after another play
+  include: play3.yaml
+

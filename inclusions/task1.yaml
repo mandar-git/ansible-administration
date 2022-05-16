@@ -1,0 +1,4 @@
+  - name: download file
+    get_url:
+      url: http://files.cloudthat.training/devops/ansible-essentials/sql_permissions.txt
+      dest: /home/ec2-user

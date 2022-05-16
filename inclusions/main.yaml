@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - include_tasks: task1.yaml
+   - include_tasks: task2.yaml
+   - include_tasks: task3.yaml

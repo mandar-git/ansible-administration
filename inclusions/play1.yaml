@@ -1,0 +1,7 @@
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: "message from play1 task"
+
+- name: Include a play after another play
+  import_playbook: play2.yaml

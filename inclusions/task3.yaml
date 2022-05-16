@@ -1,0 +1,4 @@
+  - name:  Create a test file
+    file:
+     state: touch
+     path: /home/ec2-user/test-file.txt
