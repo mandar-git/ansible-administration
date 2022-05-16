@@ -1,0 +1,39 @@
+---
+- name: Install and start apache
+  hosts: all
+  gather_facts: false
+  become: yes
+  tasks:
+     - name: Remove apache
+       yum:
+          name: httpd
+          state: absent
+
+     - name: Install apache
+       yum:
+          name: httpd
+          update_cache: yes
+          state: latest
+
+     - name: Start apache
+       service:
+           name: httpd
+           state: started
+           enabled: yes
+
+     - name: Validate apache on remote servers
+       shell: "curl http://{{inventory_hostname}}"
+       register: out
+       
+
+     - name: validate output from prev tasks
+       debug:
+         msg: "{{out.stdout}}"
+
+     - name: Test apache url
+       uri:
+         url: http://{{inventory_hostname}}
+         method: GET
+         force_basic_auth: no
+         use_proxy: no
+         return_content: yes

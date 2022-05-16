@@ -1,0 +1,17 @@
+---
+- name: Install and start apache
+  hosts: all
+  gather_facts: false
+  become: yes
+  tasks:
+     - name: create file
+       file:
+          state: touch
+          path: /home/ec2-user/hello1.txt
+       when: inventory_hostname == 'server1'
+
+     - name: copy file
+       copy:
+          src: /home/ec2-user/hello1.txt
+          dest: /tmp/test.txt
+       delegate_to: server1
