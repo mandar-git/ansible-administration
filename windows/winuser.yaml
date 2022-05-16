@@ -1,0 +1,15 @@
+---
+- name: Sample playbook example to demonstrate windows modules
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: create test user
+    win_user:
+      name: testuser
+      state: present
+      password: testpass1#
+  - win_group_membership:
+      name: Remote Desktop Users
+      members:
+      - testuser
+      state: pure

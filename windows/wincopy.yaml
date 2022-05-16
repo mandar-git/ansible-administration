@@ -1,0 +1,9 @@
+---
+- name: Sample playbook example to demonstrate windows modules
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: copy test file to a windows host
+    win_copy:
+      src: test.txt
+      dest: C:\Users\testuser\Desktop\test.txt

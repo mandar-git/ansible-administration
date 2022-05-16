@@ -1,0 +1,13 @@
+[win]
+3.110.219.210
+
+[win:vars]
+ansible_password='testpass1#'
+ansible_user=testuser
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+ansible_port=5986
+ansible_connection=winrm
+
+
+
