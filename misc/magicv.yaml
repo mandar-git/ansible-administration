@@ -1,0 +1,17 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+  - debug: var=ansible_check_mode
+  - debug: var=ansible_forks
+  - debug: var=ansible_host
+  - debug:
+      msg: '{{ansible_play_hosts}}'
+  - debug:
+      msg: '{{ansible_config_file}}'
+  - debug:
+      msg: '{{inventory_hostname_short}}'
+  - debug:  var=inventory_file
+  - debug: var=ansible_verbosity
+  - debug: 
+      msg: '{{group_names}}'

@@ -1,0 +1,10 @@
+server3 ansible_host=172.31.13.55
+server4 ansible_host=172.31.6.25
+
+[web_servers]
+server3
+
+[db_servers]
+server4
+
+
