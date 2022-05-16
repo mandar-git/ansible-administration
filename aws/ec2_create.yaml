@@ -1,0 +1,98 @@
+--- 
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars_files:
+  - myvars.yaml
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    status: present
+  tasks:
+  - name: Get the public key
+    shell: cat /home/ec2-user/.ssh/id_rsa.pub
+    register: pubkey
+
+  - name: Create an EC2 instance
+    ec2:  
+      region: "{{ aws_region }}"
+      key_name: "{{key_pair}}"
+      group_id: "{{ sg_id }}"
+      instance_type: "{{ instance_type }}"
+      image: "{{ ami_id }}"
+      wait: yes
+      instance_tags:
+        env: "{{ env }}"
+        Name: "{{ tag_name }}"
+      count_tag: env
+      exact_count: "{{instance_count}}"
+      vpc_subnet_id: "{{ subnet_id }}" 
+      assign_public_ip: yes
+      user_data: |
+                #!/bin/bash
+                echo "{{ pubkey.stdout }}" >> /home/ec2-user/.ssh/authorized_keys
+    register: ec2 
+   
+  - name: disp
+    debug: 
+      msg: " {{ item.public_ip }}"
+    with_items: "{{ ec2.instances }}"
+
+  - name: create inventory file
+    file:  
+      name: inv
+      state: touch
+      owner: ec2-user
+      mode: 0777
+    delegate_to: localhost
+
+  - name: populate contents of inv file (group header)
+    copy:
+      content: "[testgroup]\n"
+      dest: "{{ hostpath }}"
+      force: yes
+      owner: ec2-user
+      mode: 0777
+    delegate_to: localhost
+     
+  - name: Add the newly created EC2 instance(s) to host group
+    lineinfile: dest="{{ hostpath }}"
+                regexp="{{ item.private_ip }}"
+                insertafter="[testgroup]" 
+                line="{{ item.private_ip }} ansible_ssh_common_args='-o StrictHostKeyChecking=no'"
+                state="{{status}}"
+    with_items: "{{ec2.instances}}"   
+
+  - name: Wait for 90 seconds for status checks for EC2
+    wait_for:
+       timeout: 80
+    delegate_to: localhost
+ 
+  post_tasks: 
+    - name: Refresh inventory
+      meta: refresh_inventory
+       
+
+- name: Test on new inventory hosts
+  hosts: testgroup
+  gather_facts: False
+  tasks:
+     - name: Validate ssh ping to managed hosts
+       ping:
+       register: ping_result
+
+     - name: 
+       debug:
+         msg: "{{ ping_result }}"
+ 
+     - name: Install nginx
+       yum:
+         name: nginx
+         state : latest
+       become: yes
+
+     - name: Start nginx service
+       service:
+         name: nginx 
+         enabled: yes
+         state: started
+       become: yes
