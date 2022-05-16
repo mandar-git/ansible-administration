@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Create a test directory
+    file:
+      name: testdir
+      state: directory
+      path: /home/ec2-user
+    notify: restart service
+
+  - name: Flush the playbook handlers
+    meta: flush_handlers
+
+
+  - name: Restart crond 
+    service:
+      name: crond
+      state: restarted
+    notify: restart service
+ 
+  - name: test task
+    debug:
+      msg: "test task" 
+
+  handlers:
+    - name: restart service
+      debug:
+        msg: "Handler notified, verify service restarted"
+

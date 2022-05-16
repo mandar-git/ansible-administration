@@ -1,0 +1,17 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  handlers:
+    - name: restart crond
+      service: name=crond state=restarted
+      listen: "restart services"
+    - name: restart httpd
+      service: name=httpd state=restarted
+      listen: "restart services"
+
+  tasks:
+    - name: restart everything
+      command: echo "this task will restart all subscribed  services"
+
+      notify: "restart services"

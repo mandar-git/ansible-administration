@@ -1,0 +1,33 @@
+---
+- hosts: all
+  become: yes
+  handlers:
+  - name: start-apache
+    service:
+      name: httpd
+      state: restarted
+  - name: test-handler
+    debug:
+     msg: "handler invoked"
+  tasks:
+  - name: install apache
+    yum:
+     name: httpd
+     state: present
+    notify: start-apache
+
+  - name: update config
+    copy: 
+     src: /home/ec2-user/httpd.conf
+     dest: /etc/httpd/conf/httpd.conf
+    notify: start-apache
+
+  - name: create user
+    user:
+      name: test101
+      state: present
+    changed_when: true
+    notify: 
+        - test-handler
+        - start-apache
+
