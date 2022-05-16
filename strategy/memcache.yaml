@@ -1,0 +1,4 @@
+- name: Install memcache
+  yum: name=memcached update_cache=yes
+- name: Ensure memcache is started.
+  service: name=memcached state=started

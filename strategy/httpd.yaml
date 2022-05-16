@@ -1,0 +1,4 @@
+- name: Install apache
+  yum: name=httpd update_cache=yes
+- name: Ensure apache is started.
+  service: name=httpd state=started

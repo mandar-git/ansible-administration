@@ -1,0 +1,22 @@
+---
+- hosts: all
+  gather_facts: no
+  strategy: free
+  tasks:
+  - name: Task1
+    command: "/bin/sleep {{ 10 | random }}"
+
+  - name: Task2
+    command: "/bin/sleep {{ 10 | random }}"
+
+  - name: Task3
+    command: "/bin/sleep {{ 10 | random }}"
+
+  - name: Task4
+    command: "/bin/sleep {{ 10 | random }}"
+
+  - name: Task5
+    command: "/bin/sleep {{ 10 | random }}"
+
+  - name: Task6
+    command: "/bin/sleep {{ 10 | random }}"

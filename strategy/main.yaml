@@ -1,0 +1,9 @@
+- hosts: all
+  gather_facts: no
+  become: yes
+  strategy: free
+  tasks:
+    - include: memcache.yaml
+      when:  "'memcached' in group_names"
+    - include: httpd.yaml
+      when: "'apache' in group_names"

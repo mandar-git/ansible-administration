@@ -1,0 +1,38 @@
+---
+- hosts: all
+  tasks:
+  - name: Task1
+    command: /bin/sleep 5
+    when: inventory_hostname == 'server1'
+    async: 10
+    poll: 1
+
+  - name: Task2
+    command: /bin/sleep 5
+    when: inventory_hostname == 'server2'
+    async: 10
+    poll: 1
+
+  - name: Task3
+    command: /bin/sleep 5
+    when: inventory_hostname == 'server3'
+    async: 10
+    poll: 1
+
+  - name: Task4
+    command: /bin/sleep 5
+    when: inventory_hostname == 'server4'
+    async: 10
+    poll: 1
+
+  - name: Task5
+    command: /bin/sleep 5
+    when: inventory_hostname == 'server1'
+    async: 10
+    poll: 1
+
+  - name: Task6
+    command: /bin/sleep 5
+    when: inventory_hostname == 'server2'
+    async: 10
+    poll: 1
