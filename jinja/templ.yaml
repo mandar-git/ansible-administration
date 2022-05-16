@@ -1,0 +1,42 @@
+---
+
+- hosts: all
+  become: yes
+  vars:
+    document_root: /home/ec2-user/
+    default_port: 8080
+    pkg: httpd
+  tasks:
+  - name: installing httpd
+    yum:
+      name: '{{pkg}}'
+      state: present
+  - name: configure apache
+    template:
+      src: apache.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+      owner: apache
+      group: apache
+  - name: copy custom html
+    copy:
+      src: index.html
+      dest: /home/ec2-user/
+      owner: apache
+      group: apache
+    copy:
+      src: index.html
+      dest: /usr/share/httpd/noindex/
+      owner: apache
+      group: apache
+  - name: start service
+    service:
+       name: '{{pkg}}'
+       state: restarted
+       enabled: yes
+  - name: verify apache conf
+    shell: "grep -e 'Listen' -e 'DocumentRoot' -e 'Directory' /etc/httpd/conf/httpd.conf"
+    register: out
+
+  - name: display contents
+    debug:
+      msg: '{{out}}'

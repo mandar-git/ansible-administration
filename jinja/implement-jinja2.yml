@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - template:
+         src: new-motd.j2
+         dest: /etc/motd
+         owner: '{{ansible_user_id}}'
+         group: '{{ansible_user_id}}'
+         mode: 0644

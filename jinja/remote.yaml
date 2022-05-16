@@ -1,0 +1,10 @@
+---
+ - hosts: all
+   tasks:
+     - name: Fetch the file from the host1 to control
+       fetch: src=/home/ec2-user/test1.txt dest=buffer/ flat=yes
+       when: "{{ inventory_hostname == 'server1' }}"
+
+     - name: Copy the file from control to host2
+       copy: src=buffer/test1.txt dest=/home/ec2-user/
+       when: "{{ inventory_hostname == 'server2' }}"
