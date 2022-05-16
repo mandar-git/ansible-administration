@@ -1,0 +1,57 @@
+#install graphviz to visualize host inventories
+
+sudo yum -y  install graphviz
+
+# install ansible-inventory-grapher using pip
+
+sudo pip3  install ansible-inventory-grapher
+
+
+#create a test inventory file
+
+vi inventory
+
+ansible01 ansible_host=172.101.92.240
+ansible02 ansible_host=172.15.63.218
+ansible03 ansible_host=172.24.63.217
+ansible04 ansible_host=172.68.145.116
+
+[mumbai]
+ansible01
+ansible02
+
+[delhi]
+ansible03
+ansible04
+
+[aws:children]
+mumbai
+delhi
+
+[aws:vars]
+ansible_connection=ssh
+ansible_user=ec2-user
+ansible_private_key_file=~/.ssh/id_rsa
+host_key_checking=False
+
+
+
+ansible-inventory-grapher -i inventory aws
+
+
+ansible-inventory-grapher -i inventory aws | dot -Tpng > hosts.png
+
+ls -ltr *.png
+
+
+# Copy the png file to an S3 bucket  in your current AWS region 
+
+aws s3 cp hosts.png s3://<bucket_name>/ 
+
+
+sample inventory graph png file generated can be viewed using below url, replace <bucket_name> with name of your S3 bucket
+
+https://<bucket-name>.s3.ap-south-1.amazonaws.com/hosts.png
+
+
+
