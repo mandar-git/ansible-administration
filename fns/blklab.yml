@@ -1,0 +1,28 @@
+- hosts: all
+  become: yes
+  user: ec2-user
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - block:
+      - name: Install pkg1
+        yum:
+          name: httpd
+          state: latest
+      - name: Install pkg2 
+        yum:
+          name: wget
+          state: latest
+    rescue:
+      - name: Install {{ db_package }} package
+        yum:
+          name: "{{ db_package }}"
+          state: latest
+    always:
+      - name: Start {{ db_service }} service
+        service:
+          name: "{{ db_service }}"
+          state: started
+  vars:
+    db_package: mariadb-server
+    db_service: mariadb

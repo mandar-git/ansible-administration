@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  user: ec2-user
+  connection: ssh
+  vars_prompt:
+    - name: pkginstall
+      prompt: Which package do you want to install?
+      default: telnet
+      private: no
+  tasks:
+    - name: Install the package {{pkginstall}} 
+      yum: pkg={{ pkginstall }} state=latest

@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: yes
+  vars:
+   testvar: test-variable-001
+  gather_facts: no
+  tasks:
+    - name: Install telnet
+      yum: pkg=telnet11 state=latest
+      tags:
+        - packages
+      ignore_errors: yes
+    - name: Verifying telnet installation
+      raw: yum list installed | grep telnet > /home/ec2-user/pkg.log
+      tags:
+        - logging
+    - name:
+      debug:
+        msg : '{{testvar}}'
+
+      tags:
+        - always
+    

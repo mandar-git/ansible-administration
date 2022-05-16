@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Recording uptime on all machines
+    raw: /usr/bin/uptime >> /home/ec2-user/uptime
+    run_once: true
+
+  - name: create dummy user
+    user:
+     name: dummy-test-user
+     state: present
