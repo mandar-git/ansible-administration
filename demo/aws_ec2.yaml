@@ -1,0 +1,11 @@
+plugin: aws_ec2
+regions:
+  - "ap-south-1"
+keyed_groups:
+  - key: tags.Name
+filters:
+  instance-state-name : running
+  tag:Name: ansible-managed
+
+compose:
+  ansible_host: public_ip_address

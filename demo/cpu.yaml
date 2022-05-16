@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - debug:
+      msg: '{{item }}'
+    with_items:
+     - ansible_processor_vcpus
+     - ansible_processor_cores
+     - ansible_processor_cores
+     - ansible_processor_threads_per_core
+     - ansible_processor_count
