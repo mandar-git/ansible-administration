@@ -1,0 +1,23 @@
+---
+- name: This play will install apache web servers on all the hosts
+  hosts: all
+  become: yes
+  tasks:
+      - yum:
+          name: httpd
+          update_cache: yes
+          state: latest
+
+      - copy:
+          src: /home/ec2-user/labs/index.html
+          dest: /var/www/html
+
+      - file:
+          path: /var/www/html/index.html
+          owner: apache
+          group: apache
+          mode: 0644
+
+      - service:
+           name: httpd
+           state: started

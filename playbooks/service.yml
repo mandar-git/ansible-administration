@@ -1,0 +1,19 @@
+---
+- hosts: all
+  ignore_errors: yes
+  tasks:
+  - name: download file
+    get_url:
+      url: http://files.cloudthat.training/devops/ansible-essentials/sql_permissions.txt
+      dest: /home/ec2-user
+  - name: uninstalling httpd
+    yum:
+      name: httpd
+      state: present
+  - name: disable-selinux
+    selinux:
+       state: disabled
+  - name:  Create a test file
+    file:
+     state: touch
+     path: /home/ec2-user/test-file.txt
