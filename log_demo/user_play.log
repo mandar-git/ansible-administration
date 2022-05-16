@@ -1,0 +1,42 @@
+2022-05-13 04:17:45,827 p=2588 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:17:46,292 p=2588 u=ec2-user n=ansible | PLAY [all] ****************************************************************************************************
+2022-05-13 04:17:46,304 p=2588 u=ec2-user n=ansible | TASK [Gathering Facts] ****************************************************************************************
+2022-05-13 04:17:47,957 p=2588 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:17:47,975 p=2588 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:17:47,991 p=2588 u=ec2-user n=ansible | TASK [Creating a new user ct-user] ****************************************************************************
+2022-05-13 04:17:48,684 p=2588 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:17:48,690 p=2588 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:17:48,706 p=2588 u=ec2-user n=ansible | PLAY RECAP ****************************************************************************************************
+2022-05-13 04:17:48,707 p=2588 u=ec2-user n=ansible | 172.31.13.55               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:17:48,707 p=2588 u=ec2-user n=ansible | 172.31.6.25                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:18:21,089 p=2646 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:18:21,536 p=2646 u=ec2-user n=ansible | PLAY [all] ****************************************************************************************************
+2022-05-13 04:18:21,546 p=2646 u=ec2-user n=ansible | TASK [Gathering Facts] ****************************************************************************************
+2022-05-13 04:18:22,748 p=2646 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:18:22,754 p=2646 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:18:22,769 p=2646 u=ec2-user n=ansible | TASK [Creating a new user ct-user] ****************************************************************************
+2022-05-13 04:18:23,414 p=2646 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:18:23,430 p=2646 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:18:23,446 p=2646 u=ec2-user n=ansible | PLAY RECAP ****************************************************************************************************
+2022-05-13 04:18:23,446 p=2646 u=ec2-user n=ansible | 172.31.13.55               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:18:23,446 p=2646 u=ec2-user n=ansible | 172.31.6.25                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:27:28,678 p=2931 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:27:29,122 p=2931 u=ec2-user n=ansible | PLAY [all] ****************************************************************************************************
+2022-05-13 04:27:29,132 p=2931 u=ec2-user n=ansible | TASK [Gathering Facts] ****************************************************************************************
+2022-05-13 04:27:30,722 p=2931 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:27:30,728 p=2931 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:27:30,744 p=2931 u=ec2-user n=ansible | TASK [Creating a new user ct-user] ****************************************************************************
+2022-05-13 04:27:31,415 p=2931 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:27:31,422 p=2931 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:27:31,438 p=2931 u=ec2-user n=ansible | PLAY RECAP ****************************************************************************************************
+2022-05-13 04:27:31,438 p=2931 u=ec2-user n=ansible | 172.31.13.55               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:27:31,438 p=2931 u=ec2-user n=ansible | 172.31.6.25                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

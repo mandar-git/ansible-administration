@@ -1,0 +1,12 @@
+---
+- name: This play will install apache web servers on all the hosts
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+     - name: Task1 will install httpd using yum
+       yum:
+          name: httpd
+          update_cache: yes
+          state: latest
+

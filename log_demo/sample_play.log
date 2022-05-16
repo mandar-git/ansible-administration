@@ -1,0 +1,33 @@
+2022-05-13 04:19:09,302 p=2696 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:19:09,740 p=2696 u=ec2-user n=ansible | PLAY [This play will install apache web servers on all the hosts] *********************************************
+2022-05-13 04:19:09,754 p=2696 u=ec2-user n=ansible | TASK [Task1 will install httpd using yum] *********************************************************************
+2022-05-13 04:19:21,780 p=2696 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:19:32,613 p=2696 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:19:32,621 p=2696 u=ec2-user n=ansible | PLAY RECAP ****************************************************************************************************
+2022-05-13 04:19:32,621 p=2696 u=ec2-user n=ansible | 172.31.13.55               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:19:32,621 p=2696 u=ec2-user n=ansible | 172.31.6.25                : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:20:00,359 p=2737 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:20:00,815 p=2737 u=ec2-user n=ansible | PLAY [This play will install apache web servers on all the hosts] *********************************************
+2022-05-13 04:20:00,829 p=2737 u=ec2-user n=ansible | TASK [Task1 will install httpd using yum] *********************************************************************
+2022-05-13 04:20:11,870 p=2737 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:20:12,311 p=2737 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:20:12,320 p=2737 u=ec2-user n=ansible | PLAY RECAP ****************************************************************************************************
+2022-05-13 04:20:12,320 p=2737 u=ec2-user n=ansible | 172.31.13.55               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:20:12,320 p=2737 u=ec2-user n=ansible | 172.31.6.25                : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:26:00,738 p=2873 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:26:01,176 p=2873 u=ec2-user n=ansible | PLAY [This play will install apache web servers on all the hosts] *********************************************
+2022-05-13 04:26:01,190 p=2873 u=ec2-user n=ansible | TASK [Task1 will install httpd using yum] *********************************************************************
+2022-05-13 04:26:12,748 p=2873 u=ec2-user n=ansible | ok: [172.31.6.25]
+2022-05-13 04:26:12,831 p=2873 u=ec2-user n=ansible | ok: [172.31.13.55]
+2022-05-13 04:26:12,839 p=2873 u=ec2-user n=ansible | PLAY RECAP ****************************************************************************************************
+2022-05-13 04:26:12,840 p=2873 u=ec2-user n=ansible | 172.31.13.55               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 04:26:12,840 p=2873 u=ec2-user n=ansible | 172.31.6.25                : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

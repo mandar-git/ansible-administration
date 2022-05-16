@@ -1,0 +1,25 @@
+---
+ - name: "Playbook to demo suppressing logs at task level"
+   hosts: all
+   gather_facts: no
+   become: yes
+   ignore_errors: yes
+   tasks:
+
+    - name: Install packages
+      yum:
+        name: ['wget','curl']
+        state: present
+
+    - name: Create admin user
+      user:
+        name: admin
+        shell: /bin/sh
+        state: started
+      no_log: True
+
+    - name: Create admin user
+      user:
+        name: test
+        shell: /bin/sh
+        state: started

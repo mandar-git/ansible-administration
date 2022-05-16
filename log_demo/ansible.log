@@ -1,0 +1,73 @@
+2022-05-13 04:32:09,892 p=2997 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:32:11,343 p=2997 u=ec2-user n=ansible | 172.31.6.25 | CHANGED | rc=0 >>
+total 0
+drwx------. 2 test1           test1            62 May  9 11:07 test1
+drwx------. 2 test2           test2            62 May  9 11:10 test2
+drwx------. 3 cloudthat       cloudthat        77 May 10 05:21 cloudthat
+drwx------. 2 ct-user         ct-user          62 May 10 06:45 ct-user
+drwx------. 2 ct-user1        ct-user1         62 May 10 06:48 ct-user1
+drwx------. 2 dummy-user      dummy-user       62 May 10 08:45 dummy-user
+drwx------. 2 test01          test01           62 May 10 08:47 test01
+drwx------. 2 test111         test111          62 May 10 08:50 test111
+drwx------. 2 test222         test222          62 May 10 08:51 test222
+drwx------  2            1010            1010  62 May 11 04:37 dev-user-01
+drwx------  2            1011            1011  62 May 11 04:37 qa-user-01
+drwx------  2 qa-user-11      qa-user-11       62 May 11 04:39 qa-user-11
+drwx------  2 userX           userX            62 May 11 05:17 userX
+drwx------  2 userY           userY            62 May 11 05:17 userY
+drwx------  2 userZ           userZ            62 May 11 05:17 userZ
+drwx------  2 dummy-test-user dummy-test-user  62 May 11 06:09 dummy-test-user
+drwx------. 5 ec2-user        ec2-user        200 May 11 09:34 ec2-user
+drwx------  2 test101         test101          62 May 12 04:39 test101
+drwx------  2 ct-user11       ct-user11        62 May 12 12:15 ct-user11
+
+2022-05-13 04:32:11,360 p=2997 u=ec2-user n=ansible | 172.31.13.55 | CHANGED | rc=0 >>
+total 0
+drwx------. 2 test1           test1            62 May  9 11:07 test1
+drwx------. 2 test2           test2            62 May  9 11:10 test2
+drwx------. 3 cloudthat       cloudthat        98 May 10 05:25 cloudthat
+drwx------. 2 ct-user         ct-user          62 May 10 06:45 ct-user
+drwx------. 2 ct-user1        ct-user1         62 May 10 06:48 ct-user1
+drwx------. 2 dummy-user      dummy-user       62 May 10 08:45 dummy-user
+drwx------. 2 test01          test01           62 May 10 08:47 test01
+drwx------. 2 test111         test111          62 May 10 08:50 test111
+drwx------. 2 test222         test222          62 May 10 08:51 test222
+drwx------  2            1010            1010  62 May 11 04:37 dev-user-01
+drwx------  2            1011            1011  62 May 11 04:37 qa-user-01
+drwx------  2 dev-user-11     dev-user-11      62 May 11 04:39 dev-user-11
+drwx------  2 userX           userX            62 May 11 05:17 userX
+drwx------  2 userY           userY            62 May 11 05:17 userY
+drwx------  2 userZ           userZ            62 May 11 05:17 userZ
+drwx------  2 dummy-test-user dummy-test-user  62 May 11 06:09 dummy-test-user
+drwx------. 5 ec2-user        ec2-user        214 May 11 09:32 ec2-user
+drwx------  2 test101         test101          62 May 12 04:39 test101
+drwx------  2 ct-user11       ct-user11        62 May 12 12:15 ct-user11
+
+2022-05-13 04:32:55,611 p=3045 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:32:56,797 p=3045 u=ec2-user n=ansible | 172.31.13.55 | CHANGED | rc=0 >>
+ 04:32:56 up 58 min,  1 user,  load average: 0.00, 0.00, 0.00
+
+2022-05-13 04:32:56,802 p=3045 u=ec2-user n=ansible | 172.31.6.25 | CHANGED | rc=0 >>
+ 04:32:56 up 58 min,  1 user,  load average: 0.15, 0.09, 0.08
+
+2022-05-13 04:33:49,140 p=3079 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:33:52,547 p=3079 u=ec2-user n=ansible | Encryption successful
+2022-05-13 04:34:46,146 p=3090 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:34:50,009 p=3090 u=ec2-user n=ansible | ERROR! input is already encrypted
+2022-05-13 04:34:56,603 p=3111 u=ec2-user n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. 
+Current version: 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]. This feature 
+will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-13 04:34:58,265 p=3111 u=ec2-user n=ansible | Decryption successful

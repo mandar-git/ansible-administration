@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: no
+  tasks:
+    - name: Creating a new user ct-user
+      user:
+         name: ct-user11
